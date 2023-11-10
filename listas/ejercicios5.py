@@ -22,8 +22,9 @@ tabla = [
         'juegos': ['FIFA21', 'PRO21', 'MOTOGP21']
     }
 ]
-
+print()
 for categoria in tabla:
     print(f"-------------------{categoria['categoria']}--------------------")
     for juego in categoria['juegos']:
         print(juego)
+    
