@@ -11,7 +11,7 @@ def get_int():
             is_number = False
     return number
 
-try:
+""" try:
     numero = int(input("introd el numero para elevarlo al cuadrado: "))
     print("el cuadrado es:" + numero * numero)
 
@@ -22,3 +22,19 @@ except ValueError:
 
 except Exception as e:
     print(f"ha ocurrido un error : {type(e).__name__}")
+"""
+class NotIntError(Exception):
+    def __init__(self, value, message = "This module only works with integers. Sorry!"):
+        self.value = value
+        self.message = message
+        super().__init__(self.message)
+    def __str__(self) -> str:
+        return f"{self.value} -> {self.message}"
+
+values = (4, 7, 2.11, 9)
+try:
+    for value in values:
+        if not isinstance(value, int):
+            raise NotIntError(value)
+except NotIntError as e:
+    print(e)
