@@ -8,8 +8,10 @@ class MobilePhone:
         self.status = status
         
     # metodos
-    def install_apps(self, app):
-        self.apps.append(app)
+    def install_apps(self, *apps_for_install):
+        for app in apps_for_install:
+            self.apps.append(app)
+            
     def uninstall_apps(self, app):
         uninstall = ""
         if app in self.apps:
@@ -32,4 +34,5 @@ class MobilePhone:
         else:
             result = "encendido"
         return self.status
+    
     
