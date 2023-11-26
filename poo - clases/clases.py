@@ -1,12 +1,23 @@
 class MobilePhone:
     # constructor
     def __init__(self, manufactured, screen_size, num_cores, status = 0):
-        self.manufactured = manufactured
+        self.__manufactured = manufactured
         self.screen_size = screen_size
         self.num_cores = num_cores
         self.apps = ["basicGim", "clock", "navig"]
         self.status = status
         
+        
+    """ @property
+    def manufactured(self):
+        #print('inside the getter')
+        return self.hidden_manufactured
+    
+    @manufactured.setter
+    def manufactured(self, manufactured):
+        #print('inside the setter')
+        self.hidden_manufactured = manufactured
+    """
     # metodos
     def install_apps(self, *apps_for_install):
         for app in apps_for_install:
@@ -34,5 +45,6 @@ class MobilePhone:
         else:
             result = "encendido"
         return self.status
-    
+    def getManufactured(self):
+        return self.__manufactured
     
